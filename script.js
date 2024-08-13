@@ -1,5 +1,4 @@
 
-
 const container = document.getElementById("container");
 for (let lin = 0; lin < 16; lin++) {
   const newLine = document.createElement("div");
@@ -12,25 +11,6 @@ for (let lin = 0; lin < 16; lin++) {
   container.appendChild(newLine);
 }; 
 
-/*
-let mouseIsDown;
-const squares = document.querySelectorAll(".square");
-squares.forEach(square => {
-  square.addEventListener("mousedown", () => {
-    mouseIsDown = true;
-  });
-  square.addEventListener("mouseup", () => {
-    mouseIsDown = false;
-  });
-  square.addEventListener("mouseover", () => {
-    if (mouseIsDown) {
-      square.style.backgroundColor = "blue";
-    } 
-  });
-});
-*/
-
-let mouseIsDown;
 const squares = document.querySelectorAll(".square");
 squares.forEach(square => {
   square.addEventListener("mousedown", startPainting);
@@ -38,6 +18,7 @@ squares.forEach(square => {
   square.addEventListener("mouseover", keepPainting);
 });
 
+let mouseIsDown;
 function startPainting(event) { 
   event.target.style.backgroundColor = "blue";
   mouseIsDown = true;
@@ -52,9 +33,6 @@ function keepPainting(event) {
   if (!mouseIsDown) return;
   event.target.style.backgroundColor = "blue";
 }
-
-
-
 
 
 // when i click on any square = isMouseDown true
