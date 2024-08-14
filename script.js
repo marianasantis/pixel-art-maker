@@ -20,7 +20,13 @@ slider.addEventListener("input", () => {
   const grid = document.getElementById("grid");
   grid.textContent = "";
   buildGrid(slider.value);
+  changeSizeText(slider.value);
 });
+
+function changeSizeText(size) {
+  const sizeText = document.getElementById("size-text");
+  sizeText.textContent = size + "x" + size;
+}
 
 function addListeners() {
   const squares = document.querySelectorAll(".square");
