@@ -16,25 +16,28 @@ html,body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  gap: 2rem;
   font-family: "Manrope", sans-serif;
+  overflow-x: hidden;
 }
 
 #header {
   font-size: 1.5rem;
   text-align: center;
-  border: 1px solid #E5E7EB
+  border-bottom: 1px solid #E5E7EB;
 }
 
 #content {
   display: flex;
-  gap: 10rem;
+  gap: 5rem;
   margin: 3rem auto;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .container {
   background-color: #F0F1FF;
-  padding: 2rem;
+  padding: 1.5rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -44,12 +47,17 @@ html,body {
 #choices-container {
   display: flex;
   flex-direction: column;
-  gap: 5rem;
-  min-width: 15rem;
+  gap: 2rem;
+  min-width: 10rem;
 }
 
 input {
   width: 90%;
+}
+
+#buttons {
+  display: flex;
+  gap: 1rem;
 }
 
 button {
@@ -64,7 +72,8 @@ button {
 #grid-container {
   display: flex;
   border: 1px solid #5664F5;
-  width: 50vw;
+  width: 45rem;
+  height: 45rem;
 }
 
 #grid {
@@ -86,13 +95,44 @@ button {
 
 #footer {
   display: flex;
-  margin-top: auto;
   justify-content: center;
   padding: 1rem;
-  border: 1px solid #E5E7EB;
+  border-top: 1px solid #E5E7EB;
   gap: 0.4rem;
+  width: 100%;
 }
 
 #footer img {
   width: 1.3rem;
 }
+
+@media (max-width: 1000px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 800px) {
+  #content {
+    flex-direction: column-reverse;
+  }
+
+  #choices-container {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 600px) {
+  #content {
+    flex-direction: column-reverse;
+  }
+
+  #choices-container {
+    flex-direction: row;
+  }
+
+  html {
+    font-size: 7px;
+  }
+}
+
