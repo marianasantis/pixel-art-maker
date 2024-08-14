@@ -1,5 +1,4 @@
-
-const container = document.getElementById("container");
+const grid = document.getElementById("grid");
 for (let lin = 0; lin < 16; lin++) {
   const newLine = document.createElement("div");
   newLine.className = "line";
@@ -8,7 +7,7 @@ for (let lin = 0; lin < 16; lin++) {
     newDiv.className = "square";
     newLine.appendChild(newDiv);
   };
-  container.appendChild(newLine);
+  grid.appendChild(newLine);
 }; 
 
 const squares = document.querySelectorAll(".square");
@@ -22,7 +21,7 @@ let mouseIsDown;
 function startPainting(event) { 
   event.target.style.backgroundColor = "blue";
   mouseIsDown = true;
-  event.preventDefault();
+  event.preventDefault();myRange
 }
 
 function stopPainting(event) {
@@ -33,9 +32,3 @@ function keepPainting(event) {
   if (!mouseIsDown) return;
   event.target.style.backgroundColor = "blue";
 }
-
-
-// when i click on any square = isMouseDown true
-// isMouseDown is gonna become false when theres a mouseUp event on any square
-// u need to prevent dragging action so it can work
-

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
 * {
   margin: 0;
   padding: 0;
@@ -9,14 +12,80 @@ html,body {
     height: 100%;
 }
 
-body {
+#page-container {
   display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  gap: 2rem;
+  font-family: "Manrope", sans-serif;
 }
 
-#container {
+#header {
+  font-size: 1.5rem;
+  text-align: center;
+  border: 1px solid #E5E7EB
+}
+
+#content {
+  display: flex;
+  gap: 10rem;
+  margin: 3rem 0;
+  justify-content: center;
+}
+
+.container {
+  background-color: #F0F1FF;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border-radius: 2rem;
+}
+
+#choices-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  min-width: 15rem;
+}
+
+input {
+  width: 90%;
+}
+
+button {
+  font-family: "Manrope", sans-serif;
+  background-color: #5664F5;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: bolder;
+  padding: 0.3rem;
+}
+
+#grid-container {
+  display: flex;
+  justify-content: center;
+  border: 1px solid #5664F5;
+  width: 70%;
+}
+
+#grid {
   display: flex;
   flex-direction: column;
   margin: auto;
+}
+
+#footer {
+  display: flex;
+  margin-top: auto;
+  justify-content: center;
+  padding: 1rem;
+  border: 1px solid #E5E7EB;
+  gap: 0.4rem;
+}
+
+#footer img {
+  width: 1.3rem;
 }
 
 .line {
@@ -25,7 +94,7 @@ body {
 
 .square {
   display: flex;
-  width: 50px;
-  height: 50px;
+  width: 2.5rem;
+  height: 2.5rem;
   border: solid 1px black;
 }

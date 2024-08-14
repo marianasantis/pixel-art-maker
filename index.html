@@ -7,10 +7,36 @@
   <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-  <div id="container">
-    
+  <div id="page-container">
+    <div id="header">
+      <h1>Pixel Art Maker</h1>
+    </div>
+    <div id="content">
+      <div id="choices-container">
+        <div class="container">
+          <h3>Pick a color</h3>
+          <input type="color" value="#ff0000">
+        </div>
+        <div class="container">
+          <h3>Tools</h3>
+          <button>Erase</button>
+          <button>Clear</button>
+        </div>
+        <div class="container">
+          <h3>Grid Size</h3>
+          <input type="range" min="1" max="64" value="16" id="slider">
+        </div>
+      </div>
+      <div id="grid-container" class="container">
+        <div id="grid"></div>
+      </div>
+    </div>
+    <div id="footer">
+      <p>Copyright © 2024 Mariana de Santis </p>
+      <a href="https://github.com/marianasantis">
+      <img src="./images/github.png" alt="the github logo (a black cat)" class="logo"></a>
+    </div>
   </div>
-
 
 
   <script src="./script.js"></script>
