@@ -1,30 +1,45 @@
-const grid = document.getElementById("grid");
-for (let lin = 0; lin < 16; lin++) {
-  const newLine = document.createElement("div");
-  newLine.className = "line";
-  for (let col = 0; col < 16; col++) {
-    const newDiv = document.createElement("div");
-    newDiv.className = "square";
-    newLine.appendChild(newDiv);
-  };
-  grid.appendChild(newLine);
-}; 
+buildGrid(16);
 
-const squares = document.querySelectorAll(".square");
-squares.forEach(square => {
-  square.addEventListener("mousedown", startPainting);
-  square.addEventListener("mouseup", stopPainting);
-  square.addEventListener("mouseover", keepPainting);
+function buildGrid(sliderValue) {
+  const grid = document.getElementById("grid");
+  for (let lin = 0; lin < sliderValue; lin++) {
+    const newLine = document.createElement("div");
+    newLine.className = "line";
+    for (let col = 0; col < sliderValue; col++) {
+      const newDiv = document.createElement("div");
+      newDiv.className = "square";
+      newLine.appendChild(newDiv);
+    };
+    grid.appendChild(newLine);
+  }; 
+  addListeners();
+}
+
+const slider = document.getElementById("slider");
+slider.addEventListener("input", () => {
+  const grid = document.getElementById("grid");
+  grid.textContent = "";
+  buildGrid(slider.value);
 });
+
+function addListeners() {
+  const squares = document.querySelectorAll(".square");
+  squares.forEach(square => {
+    square.addEventListener("mousedown", startPainting);
+    square.addEventListener("mouseover", keepPainting);
+  });
+  const gridCont = document.getElementById("grid-container")
+  gridCont.addEventListener("mouseup", stopPainting);
+}
 
 let mouseIsDown;
 function startPainting(event) { 
   event.target.style.backgroundColor = "blue";
   mouseIsDown = true;
-  event.preventDefault();myRange
+  event.preventDefault();
 }
 
-function stopPainting(event) {
+function stopPainting() {
   mouseIsDown = false;
 }
 
