@@ -12,7 +12,7 @@ function buildGrid(sliderValue) {
     };
     grid.appendChild(newLine);
   }; 
-  addListeners();
+  addMouseListeners();
 }
 
 const slider = document.getElementById("slider");
@@ -28,7 +28,7 @@ function changeSizeText(size) {
   sizeText.textContent = size + "x" + size;
 }
 
-function addListeners() {
+function addMouseListeners() {
   const squares = document.querySelectorAll(".square");
   squares.forEach(square => {
     square.addEventListener("mousedown", startPainting);
@@ -40,7 +40,12 @@ function addListeners() {
 
 let mouseIsDown;
 function startPainting(event) { 
-  event.target.style.backgroundColor = "blue";
+  if (eraseBtn.classList.contains("active")) {
+    event.target.style.backgroundColor = "#F0F1FF";
+  } else {
+    const colorPicker = document.getElementById("color-picker");
+    event.target.style.backgroundColor = colorPicker.value;
+  }
   mouseIsDown = true;
   event.preventDefault();
 }
@@ -51,5 +56,27 @@ function stopPainting() {
 
 function keepPainting(event) {
   if (!mouseIsDown) return;
-  event.target.style.backgroundColor = "blue";
+  if (eraseBtn.classList.contains("active")) {
+    event.target.style.backgroundColor = "#F0F1FF";
+  } else {
+    const colorPicker = document.getElementById("color-picker");
+    event.target.style.backgroundColor = colorPicker.value;
+  }
+}
+
+const eraseBtn = document.getElementById("erase-btn");
+eraseBtn.addEventListener("click", erase);
+
+function erase() {
+  eraseBtn.classList.toggle("active");
+}
+
+const clearBtn = document.getElementById("clear-btn");
+clearBtn.addEventListener("click", clear);
+
+function clear() {
+  const squares = document.querySelectorAll(".square");
+  squares.forEach(square => {
+    square.style.backgroundColor = "#F0F1FF";
+  });
 }
