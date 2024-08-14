@@ -144,7 +144,34 @@ button:active,
   }
 
   html {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 460px) {
+  #content {
+    flex-direction: column-reverse;
+  }
+
+  #choices-container {
+    flex-direction: row;
+  }
+
+  html {
     font-size: 7px;
   }
 }
 
+@media (max-width: 320px) {
+  #content {
+    flex-direction: column-reverse;
+  }
+
+  #choices-container {
+    flex-direction: row;
+  }
+
+  html {
+    font-size: 5px;
+  }
+}
