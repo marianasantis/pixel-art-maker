@@ -29,8 +29,7 @@ html,body {
 #content {
   display: flex;
   gap: 10rem;
-  margin: 3rem 0;
-  justify-content: center;
+  margin: 3rem auto;
 }
 
 .container {
@@ -64,15 +63,25 @@ button {
 
 #grid-container {
   display: flex;
-  justify-content: center;
   border: 1px solid #5664F5;
-  width: 70%;
+  width: 50vw;
 }
 
 #grid {
   display: flex;
   flex-direction: column;
-  margin: auto;
+  flex: 1;
+}
+
+.line {
+  display: flex;
+  flex: 1;
+}
+
+.square {
+  display: flex;
+  flex: 1;
+  border: solid 1px black;
 }
 
 #footer {
@@ -86,15 +95,4 @@ button {
 
 #footer img {
   width: 1.3rem;
-}
-
-.line {
-  display: flex;
-}
-
-.square {
-  display: flex;
-  width: 2.5rem;
-  height: 2.5rem;
-  border: solid 1px black;
 }

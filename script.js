@@ -34,8 +34,8 @@ function addListeners() {
     square.addEventListener("mousedown", startPainting);
     square.addEventListener("mouseover", keepPainting);
   });
-  const gridCont = document.getElementById("grid-container")
-  gridCont.addEventListener("mouseup", stopPainting);
+  const pageCont = document.getElementById("page-container")
+  pageCont.addEventListener("mouseup", stopPainting);
 }
 
 let mouseIsDown;
