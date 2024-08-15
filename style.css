@@ -113,7 +113,7 @@ button:active,
 .square {
   display: flex;
   flex: 1;
-  border: solid 1px black;
+  border: solid 1px rgb(156, 156, 156);
 }
 
 #footer {
