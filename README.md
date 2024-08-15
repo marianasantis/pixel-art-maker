@@ -11,3 +11,5 @@ Welcome to Pixel Art Maker, a simple yet powerful tool for creating pixel art di
 🔗 **Live preview:** [here](https://marianasantis.github.io/pixel-art-maker/)
 
 Thank you for using Pixel Art Maker! We hope you enjoy creating amazing pixel art!
+
+![image](https://github.com/user-attachments/assets/265296fc-7992-4049-ad75-214810ef64f0)
