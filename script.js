@@ -40,34 +40,35 @@ function addMouseListeners() {
 
 let mouseIsDown;
 function startPainting(event) { 
+  paint(event);
+  mouseIsDown = true;
+  event.preventDefault();
+}
+
+function keepPainting(event) {
+  if (!mouseIsDown) return;
+  paint(event);
+}
+
+function paint(event) {
   if (eraseBtn.classList.contains("active")) {
     event.target.style.backgroundColor = "#F0F1FF";
+  } else if (randomizeBtn.classList.contains("active")) {
+    event.target.style.backgroundColor = getRandomColor();
   } else {
     const colorPicker = document.getElementById("color-picker");
     event.target.style.backgroundColor = colorPicker.value;
   }
-  mouseIsDown = true;
-  event.preventDefault();
 }
 
 function stopPainting() {
   mouseIsDown = false;
 }
 
-function keepPainting(event) {
-  if (!mouseIsDown) return;
-  if (eraseBtn.classList.contains("active")) {
-    event.target.style.backgroundColor = "#F0F1FF";
-  } else {
-    const colorPicker = document.getElementById("color-picker");
-    event.target.style.backgroundColor = colorPicker.value;
-  }
-}
-
 const eraseBtn = document.getElementById("erase-btn");
-eraseBtn.addEventListener("click", erase);
+eraseBtn.addEventListener("click", activateEraser);
 
-function erase() {
+function activateEraser() {
   eraseBtn.classList.toggle("active");
 }
 
@@ -79,4 +80,16 @@ function clear() {
   squares.forEach(square => {
     square.style.backgroundColor = "#F0F1FF";
   });
+}
+
+const randomizeBtn = document.getElementById("randomize-btn");
+randomizeBtn.addEventListener("click", activateRandomizer);
+
+function activateRandomizer() {
+  randomizeBtn.classList.toggle("active");
+}
+
+function getRandomColor() {
+  const randomColor = Math.floor(Math.random()*16777215).toString(16);
+  return "#" + randomColor;
 }
